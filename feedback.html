@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+
+  <style type="text/css">
+  	.nav{
+  	   height: 100px;
+  		background:#eb4f07;
+  	}
+  	.imag{
+  		max-height: 100%;
+  		display: block;
+  		margin-right: auto;
+  		margin-left: auto;
+
+  	}
+  	.headd{
+  		font-family: 'Exo', sans-serif;
+  		text-align: center;
+  	}
+  	.ta{
+  		height: 200px;
+  	}
+  </style>
+</head>
+<body>
+	<div class="row nav">
+		<a href="F:\2-2\Project\final.html">
+		<img class="imag" src="C:\Users\RAMAN VANAKALLA\Desktop\AASHAYAM POSTERS\aashayam.png">
+		</a>
+	</div>			
+	<div class="row headd">
+		<h1>TELL US WHAT YOU DID</h1>
+	</div>
+	<div class="col-lg-3"></div>
+	<div class="col-lg-6">
+		<form >
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="name" class="form-control" id="name">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Heading for post</label>
+    <input type="sugg" class="form-control" id="sugg">
+  </div>
+  <div class="form-group">
+    <label for="pwd" ">what are u feeling?</label>
+    <textarea type="pos" rows="10" cols="40" 	class="form-control ta" id="tt"></textarea>
+  </div>
+  <button type="submit" class="btn btn-default" onclick="validate()">Submit</button>
+</form>
+	</div>
+	<div class="col-lg-3"></div>
+</body>
+<script type="text/javascript">
+	function validate()
+	{
+		 var c="improper ";
+		 var name=document.getElementById("tt").value;
+		  c=c+name;
+      if(document.getElementById("tt").value==""){c=c+"post "};
+      if(document.getElementById("name").value==""){c=c+"name "};
+      if(document.getElementById("sugg").value==""){c=c+"heading "};
+      if(c!="improper ")
+      	alert(c);
+	}
+</script>
+</html>
