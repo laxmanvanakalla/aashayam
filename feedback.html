@@ -29,10 +29,9 @@
   </style>
 </head>
 <body>
-	<?php echo "hello world"; ?>
 	<div class="row nav">
 		<a href="F:\2-2\Project\final.html">
-		<img class="imag" src="aashayam.png">
+		<img class="imag" src="C:\Users\RAMAN VANAKALLA\Desktop\AASHAYAM POSTERS\aashayam.png">
 		</a>
 	</div>			
 	<div class="row headd">
@@ -57,18 +56,28 @@
 </form>
 	</div>
 	<div class="col-lg-3"></div>
+<div class="row">
+<div class="col-lg-3"></div>
+<div class="col-lg-6 col-xs-12">
+	<h id="h">""</h>
+	<p id="b">""</p>
+	<p id="pp">""</p>
+</div>
+<div class="col-lg-3"></div>
+</div>
 </body>
 <script type="text/javascript">
-	function validate()
+	$(document).ready(function()
 	{
-		 var c="improper ";
-		 var name=document.getElementById("tt").value;
-		  c=c+name;
-      if(document.getElementById("tt").value==""){c=c+"post "};
-      if(document.getElementById("name").value==""){c=c+"name "};
-      if(document.getElementById("sugg").value==""){c=c+"heading "};
-      if(c!="improper ")
-      	alert(c);
-	}
-</script>
+		$(btn).onclick(function(){
+			if(typeof(storage)!="undefined")
+			{
+				localstorage.setItem("key",getElementById("name").value);
+			}
+			$(h).innerHTML=localstorage.getItem("key");
+
+		}
+			
+		}
+	);
 </html>
