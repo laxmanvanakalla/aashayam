@@ -73,7 +73,7 @@
       $("#button").click( function()
            {
              alert('button clicked');
-             if(typeOf(Storage)!="undefined")
+             if(typeof(Storage)!="undefined")
              {
              	localStorage.setItem("h",$("#name").value);
              	$("#hh").innerHTML=localStorage.getItem("h");
