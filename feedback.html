@@ -75,9 +75,10 @@
              alert('button clicked');
              if(typeof(Storage)!="undefined")
              {
-		alert("annaa");			     
-             	localStorage.setItem("h",$("#name").val());
-             	$("#b").append("<p>" + localStorage.getItem("h")+"</p>");
+		alert("annaa");	
+		abc=localStorage.getItem("h")+$("#name").val();
+             	localStorage.setItem("h",abc);
+             	$("#b").append(abc);
              }
              else{
              	alert('ls not supported');
