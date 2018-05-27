@@ -67,9 +67,9 @@
 <div class="col-lg-3"></div>
 </div>
 </body>
-<script type="text/javascript">
+	<script type="text/javascript">
 	 
-		$(function() {
+	$(function() {
       $("#button").click( function()
            {
              alert('button clicked');
@@ -77,7 +77,7 @@
              {
 		alert("annaa");			     
              	localStorage.setItem("h",$("#name").val());
-             	$("#b").text(localStorage.getItem("h"));
+             	$("#b").append("<p>" + localStorage.getItem("h")+"</p>");
              }
              else{
              	alert('ls not supported');
@@ -85,6 +85,6 @@
            }
       );
 });
- 
- </script>
+</script>
+
 </html>
