@@ -52,14 +52,15 @@
     <label for="pwd" ">what are u feeling?</label>
     <textarea type="pos" rows="10" cols="40" 	class="form-control ta" id="tt"></textarea>
   </div>
-  <button type="submit" class="btn btn-default"  >Submit</button>
+  <button type="submit" class="btn btn-default"  id="button">Submit</button>
 </form>
 	</div>
-	<div class="col-lg-3"></div>
+	 
+
 <div class="row">
 <div class="col-lg-3"></div>
-<div class="col-lg-6 col-xs-12">
-	<h id="h">""</h>
+<div class="col-lg-6  col-xs-12" id="hh">
+	<h >""</h>
 	<p id="b">""</p>
 	<p id="pp">""</p>
 </div>
@@ -67,19 +68,22 @@
 </div>
 </body>
 <script type="text/javascript">
-	$(document).ready(function()
-	{
-		$(".btn").onclick(function(){
-			alert("lol");
-			if(typeof(Storage)!=="undefined")
-			{
-				localStorage.setItem("key",getElementById("name").value);
-				alert("lol");
-			}
-			$(".h").innerHTML=localStorage.getItem("key");
-
-		}
-			
-		}
-	);
+	 
+		$(function() {
+      $("#button").click( function()
+           {
+             alert('button clicked');
+             if(typeOf(Storage)!="undefined")
+             {
+             	localStorage.setItem("h",$("#name").value);
+             	$("#hh").innerHTML=localStorage.getItem("h");
+             }
+             else{
+             	alert('ls not supported');
+             }
+           }
+      );
+});
+ 
+ </script>
 </html>
