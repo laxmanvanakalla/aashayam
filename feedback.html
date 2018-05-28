@@ -8,6 +8,24 @@
     <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
 
   <style type="text/css">
+  .hed{
+          text-align: center;
+          font-size: 30px;
+          color: #eb4f07;
+          letter-spacing: 12px;
+          font-family: 'Exo', sans-serif;
+        }
+        .by{
+          color: #eb4f07;
+          text-align: right;
+          font-size: 20px; 
+        }
+        .post{
+          border-style: solid;
+          border-color: grey;
+          border-radius: 10px;
+           box-shadow: 1px 3px grey;
+        }
   	.nav{
   	   height: 100px;
   		background:#eb4f07;
@@ -28,7 +46,7 @@
   	}
   </style>
 </head>
-<body>
+<body onload="setall()" >
 	<div class="row nav">
 		<a href="F:\2-2\Project\final.html">
 		<img class="imag" src="C:\Users\RAMAN VANAKALLA\Desktop\AASHAYAM POSTERS\aashayam.png">
@@ -37,49 +55,77 @@
 	<div class="row headd">
 		<h1>TELL US WHAT YOU DID</h1>
 	</div>
-	<div class="col-lg-3"></div>
-	<div class="col-lg-6">
+  <div class="row">
+	<div class="col-lg-3 col-xs-1"> </div>
+	<div class="col-lg-6 col-xs-10">
 		<form >
   <div class="form-group">
-    <label for="name">Name</label>
-    <input type="name" class="form-control" id="name">
+    <label for="name" required>Name</label>
+    <input type="name" class="form-control" id="name" required>
   </div>
   <div class="form-group">
     <label for="pwd">Heading for post</label>
-    <input type="sugg" class="form-control" id="sugg">
+    <input type="sugg" class="form-control" id="sugg" required>
   </div>
   <div class="form-group">
     <label for="pwd" ">what are u feeling?</label>
-    <textarea type="pos" rows="10" cols="40" 	class="form-control ta" id="tt"></textarea>
+    <textarea type="pos" rows="10" cols="40" 	class="form-control ta" id="tt" required></textarea>
   </div>
   <button type="button" class="btn btn-default"  id="button">Submit</button>
 </form>
 	</div>
+  <div class="col-lg-3 col-xs-1"></div>
+</div>
 	 
-
-<div class="row">
-<div class="col-lg-3"></div>
-<div class="col-lg-6  col-xs-12" id="hh">
-	<h >""</h>
-	<p id="b">""</p>
-	<p id="pp">""</p>
-</div>
-<div class="col-lg-3"></div>
-</div>
 </body>
 	<script type="text/javascript">
 	 
+   function setall()
+    {
+       
+      for(var i=0;i<=Number(localStorage.getItem("num"));i++)
+      {
+       
+      var ssugg =localStorage.getItem("name"+i);
+      var sname=localStorage.getItem("sugg"+i);
+      var stt=localStorage.getItem("tt"+i);
+      
+      $("body").append('<div class="row"><div class="col-lg-3 col-xs-1"></div><div class="col-lg-6 col-xs-10 post"><h1 class="col-lg-12 col-xs-12 hed" style="background: white color=#eb4f07">'+ sname+'</h1><h2 class="col-lg-12 col-xs-12 by">--'+ssugg+'</h2><label style="width: 100% height:200px">'+  stt+'</label></div><div class="col-lg-3 col-xs-1"></div></div>');
+    }
+  }
 	$(function() {
+
+    
+
+    function func(value)
+    {
+      var i;
+      for(  i=0;i<value.length;i++)
+      {
+        
+        if(value[i]!=" ")
+          return 1; 
+      }
+      return 0;
+    }
       $("#button").click( function()
            {
              alert('button clicked');
              if(typeof(Storage)!="undefined")
              {
-              if(localStorage.num=="undefined")
-              localStorage.setItem("num",1);
-            else localStorage.num=number(localStorage.num)+1;
-		          alert(localStorage.num);	
+              if(func($("#name").val())&&func($("#sugg").val())&&func($("#tt").val()))
+            {
+              if(localStorage.num)
+                localStorage.num=Number(localStorage.num)+1;
+              else  localStorage.setItem("num",1);
+              localStorage.setItem("name" +localStorage.getItem("num"),$("#name").val());
+              localStorage.setItem("sugg" +localStorage.getItem("num"),$("#sugg").val());
+              localStorage.setItem("tt" +localStorage.getItem("num"),$("#tt").val());
+              
+		          alert("your response submitted");	
+              alert("your reference number" +localStorage.getItem("num"));
              }
+           }
              else{
              	alert('ls not supported');
              }
