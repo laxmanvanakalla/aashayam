@@ -86,7 +86,7 @@ z-index: 9999;
     	}
     	.bot{
     		height: 200px;
-    		background: #eb4f07;
+    		background: #404040;
     	}
     	.about{
     		text-align: center;
@@ -136,7 +136,7 @@ z-index: 9999;
         }
         .quote{
             font-family: 'Satisfy', cursive;
-            
+            color: white;
             
         }
         .zom1{
@@ -149,15 +149,24 @@ z-index: 9999;
             
             width: 100%;
             height:60vh;
-            background-image: url(a5.jpg);
+            background-image: url(a2.jpg);
             background-size: 200vh;
             opacity: 1;
             margin: 0 auto;
             
         }
-
+        .btn{
+            background-color: green;
+            color: white;
+        }
         #scr{
             z-index: 999;
+        }
+        .miss{
+            color: black;
+            font-family: 'Play', sans-serif;
+            background-color:hsl(0,0%,100%,0.5);
+            border-radius: 20px;
         }
     	@media screen and (max-width: 1024px) {
     
@@ -191,7 +200,7 @@ z-index: 9999;
         font-size: 3vh;
     }
     #back{
-        height: 30vh
+        height: 50vh
     }
 }
 
@@ -232,7 +241,26 @@ z-index: 9999;
 <div id="back">
     <div class="col-lg-12 quote"><h1>"School is a building which has four walls with tomorrow inside"</h1></div>
 
-<div class="col-lg-9 col-xs-1"></div>
+<div class="col-lg-9 col-xs-12">
+    <div class="row">
+    <div class="col-lg-1 col-xs-1"></div>
+    <div class="col-lg-4 col-xs-10 miss">
+        <h1>MISSION</h1>
+        <p>We believe 100% literacy in India its self is complete solution to every problem</p>
+    </div>
+    <div class="col-xs-1"></div>
+</div>
+<p></p>
+    <div class="row">
+    <div class="col-xs-1">io</div>
+    <div class="col-lg-4 col-xs-10 miss">
+        <h1>IMPACT</h1>
+        <p>We reach help Govt. schools and orphanages in warangal</p>
+    </div>
+    <div class="col-xs-1"></div>
+</div>
+</div>
+<div class="col-xs-1"></div>
 <form class="col-lg-3 col-xs-10" id="form1"  action="/action_page.php">
     <p id="log" style="text-align: center">login here</p>
   <div class="form-group">
@@ -244,7 +272,7 @@ z-index: 9999;
   <div class="checkbox">
     <label><input type="checkbox"> Remember me</label>
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <button type="submit"   class="btn btn-default">Submit</button>
 </form> 
 
 </div>
