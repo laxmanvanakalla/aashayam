@@ -27,16 +27,24 @@
            box-shadow: 1px 3px grey;
         }
   	.nav{
-  	   height: 100px;
-  		background:#eb4f07;
+  	   height: 70px;
+  		background:#404040;
   	}
   	.imag{
   		max-height: 100%;
-  		display: block;
-  		margin-right: auto;
-  		margin-left: auto;
+  		margin-left: 3%;
 
   	}
+    #edit:hover{
+      color: blue;
+    }
+    #edit{
+      width: 10px;
+      font-weight: bold;
+    }
+    #for{
+      display: none; 
+    }
   	.headd{
   		font-family: 'Exo', sans-serif;
   		text-align: center;
@@ -44,18 +52,28 @@
   	.ta{
   		height: 200px;
   	}
+    .sel{
+      background-color:#404040;
+     color: #d9d9d9;
+       border-color:#404040; 
+        
+    }
+    .sel:hover{
+      color: white;
+    }
   </style>
 </head>
 <body onload="setall()" >
 	<div class="row nav">
-		<a href="F:\2-2\Project\final.html">
-		<img class="imag" src="C:\Users\RAMAN VANAKALLA\Desktop\AASHAYAM POSTERS\aashayam.png">
+		<a href="index.html">
+		<img class="imag" src="aa.jpg">
 		</a>
 	</div>			
 	<div class="row headd">
-		<h1>TELL US WHAT YOU DID</h1>
+    <button id="explore">EXPLORE</button>
+		<button id="slide">ADD YOUR OPINION</button>
 	</div>
-  <div class="row">
+  <div class="row" id="for">
 	<div class="col-lg-3 col-xs-1"> </div>
 	<div class="col-lg-6 col-xs-10">
 		<form >
@@ -82,7 +100,7 @@
 	 
    function setall()
     {
-       
+       if(localStorage.getItem("num")!="undefined")
       for(var i=0;i<=Number(localStorage.getItem("num"));i++)
       {
        
@@ -90,13 +108,10 @@
       var sname=localStorage.getItem("sugg"+i);
       var stt=localStorage.getItem("tt"+i);
       
-      $("body").append('<div class="row"><div class="col-lg-3 col-xs-1"></div><div class="col-lg-6 col-xs-10 post"><h1 class="col-lg-12 col-xs-12 hed" style="background: white color=#eb4f07">'+ sname+'</h1><h2 class="col-lg-12 col-xs-12 by">--'+ssugg+'</h2><label style="width: 100% height:200px">'+  stt+'</label></div><div class="col-lg-3 col-xs-1"></div></div>');
+      $("body").append('<div class="row"><div class="col-lg-3 col-xs-1"></div><div class="col-lg-6 col-xs-10 '+i+' post"><h1 class="col-lg-12 col-xs-12 hed '+i+' " style="background: white color=#eb4f07">'+ sname+'</h1><p class="col-lg-12 row '+i+' " id="edit" style="text-align:right"><button class="but">... </button></p><h2 class="col-lg-12 col-xs-12 by">--'+ssugg+'</h2><label style="width: 100% height:200px">'+  stt+'</label></div><div class="col-lg-3 col-xs-1"><div id="myDropdown"><button class="sel">copy</button><button class="sel">cut</button><button class="sel  ">mark</button></div></div>');
     }
   }
 	$(function() {
-
-    
-
     function func(value)
     {
       var i;
@@ -108,6 +123,10 @@
       }
       return 0;
     }
+      $(".but").click(function(){
+
+       alert($(this));
+      });
       $("#button").click( function()
            {
              alert('button clicked');
@@ -131,6 +150,12 @@
              }
            }
       );
+      $("#slide").click(function(){
+        $("#for").slideToggle("slow");
+      });
+      $("#explore").click(function(){
+        $("#for").slideUp("slow");
+      });
 });
 </script>
 
