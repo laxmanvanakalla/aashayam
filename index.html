@@ -106,7 +106,7 @@ z-index: 9999;
     	.strip{
     		width: 30px;
     		height: 10px;
-    		background: #eb4f07;
+    		background: #404040;
     		display: none;
 
     	}
@@ -162,6 +162,9 @@ z-index: 9999;
         #scr{
             z-index: 999;
         }
+        #nv{
+            display: none;
+        }
         .miss{
             color: black;
             font-family: 'Play', sans-serif;
@@ -169,7 +172,9 @@ z-index: 9999;
             border-radius: 20px;
         }
     	@media screen and (max-width: 1024px) {
-    
+    #nv{
+        display: block;
+    }
     .zom{
     	display: none;
     }
@@ -202,6 +207,9 @@ z-index: 9999;
     #back{
         height: 50vh
     }
+    .scr{
+        font-size: 20vh;
+    }
 }
 
     </style>
@@ -229,9 +237,10 @@ z-index: 9999;
 <div class="col-lg-6 col-xs-12 men"  >
 	<div class="row ">
 	<div class="col-lg-3 bor"><a>EVENTS</a></div>
-	<div class="col-lg-3 bor"><a>OCCASIONS</a></div>
+	<div class="col-lg-3 bor"><a>MEDIA</a></div>
 	<div class="col-lg-3 bor"><a>SCHOOLS</a></div>
 	<div class="col-lg-3 bor"><a href="feedback.html">WRITE</a></div>
+    <div id="nv" onclick="myf()"><h1><-</h1></div>
 	</div>
  </div>
  <div class="col-lg-3 "></div>
@@ -319,6 +328,7 @@ The ultimate aim is to help India achieve 100% LITERACY and to STOP CHILD LABOR
 var header = document.getElementById("scr");
 var sticky = header.offsetTop;
 
+
 function myFunction() {
      
   if (window.pageYOffset >= sticky) {
@@ -332,10 +342,10 @@ function myFunction() {
 		if(document.getElementsByClassName("zom")[0].style.display!="block")
 		{
 		document.getElementsByClassName("zom")[0].style.display="block";
-		document.getElementsByClassName("zom")[0].style.background="#eb4f07";
+		document.getElementsByClassName("zom")[0].style.background="#404040";
 		document.getElementsByClassName("zom")[0].style.height="100%";
 		document.getElementsByClassName("zom")[0].style.position="fixed";
-		document.getElementsByClassName("zom")[0].style.zIndex="1";
+		document.getElementsByClassName("zom")[0].style.zIndex="1999";
 		alert(window.innerHeight+"px");
 		var ele= document.getElementsByClassName("bor");
 		var i;
@@ -347,7 +357,9 @@ function myFunction() {
 		}
 		else document.getElementsByClassName("zom")[0].style.display="none";
 	}
-	
+	function myf(){
+    document.getElementsByClassName("zom")[0].style.display="none";
+}
 	
 </script>
 </html>
