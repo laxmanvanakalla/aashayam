@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+<style type="text/css">
+	.topbar{
+		background-color: #404040;
+		height: 10vh;
+	}
+	.logo{
+		background-color: #404040;
+		height: 100%;
+	}
+	#image{
+		height: 100%;
+	}
+	input[type=text]
+	{
+		float: right;
+		height: 5vh;
+		background-color: transparent;
+		border-radius: 20px;
+		text-align: center;
+		font-family: 'Share Tech Mono', monospace;
+		margin-top: 2vh;
+		margin-right: 2vh;
+		background-color: #d9d9d9;
+		padding: 0 30px;
+		width: 100%;
+		font-size: 2vh;
+	}
+	input[type=text]:focus{
+		outline:none;
+		color: #45dbe6;
+		background-color: white;
+	}
+	#searchdiv{
+		float: right;
+	}
+	.border{
+		background-color: white;
+		height: 190vh;
+	}
+	.gall{
+		height: 190vh;
+
+	}
+	.border1{
+		background-color: #404040;
+	}
+	@media screen and (max-width: 1024px) {
+		.border{
+			display: none;
+		}
+		.border1{
+			display: none;
+		}
+	}
+	.gallery a{
+		 text-decoration: none;
+	}
+	.gallery{
+		padding: 3 3 3 0vh;
+		border-style: solid;
+		border-color: #404040;
+		text-align: center;
+		font-size: 3vh;
+		color: #45dbe6;
+		 word-wrap: break-word;
+		 float: left;
+	}
+	.eventimage{
+		width: 100%;
+		height: auto;
+	}
+</style>
+</head>
+<body>
+	<div class="topbar">
+		<div class="logo">
+			<div class="col-lg-2 border1"></div>
+			<div class="col-lg-8 col-xs-12 logo">
+				<img id="image" src="galleryicon.jpg">
+				<div class="col-lg-3 col-xs-3" id="searchdiv"><input type="text" name="search" placeholder="search event name.."></div>
+			</div>
+			<div class="col-lg-2 border1"></div>
+		</div>
+	</div>
+	<div class="gall ">
+		<div class="col-lg-2 border"></div>
+		<div class="col-lg-8 col-xs-12">
+			<h1></h1>
+			<div class="gallery ins col-lg-4 col-xs-6">
+				<a target="_blank" href="ins1.jpg">
+					<img class="eventimage" src="ins1.jpg">
+					<p class="eventname">INSPIRE ORIENTATION </p>
+				</a>
+			</div>
+			<div class="gallery ins col-lg-4 col-xs-6">
+				<a target="_blank" href="ins1.jpg">
+					<img class="eventimage" src="ins2.jpg">
+					<p class="eventname">INSPIRE ORIENTATION </p>
+				</a>
+			</div>
+		</div>
+		<div class="col-lg-2 border"></div>
+	</div>
+</body>
+</html>
